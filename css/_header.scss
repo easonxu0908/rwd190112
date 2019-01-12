@@ -1,0 +1,132 @@
+@mixin pad {
+  @media (max-width:769px){
+      @content
+  }
+}
+
+@mixin iphon5_h {
+  @media (max-width:569px){
+      @content
+  }
+}
+
+.header{
+  background-image: url(../images/header_desktop.png);
+  height: 420px;
+  color: #fff;
+  position: relative;
+  .showmenu{
+    display: none;
+  }
+  .box{
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 67px;
+    background-color:rgba(0, 0, 0, 0.75);
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 1px;
+    padding: 20px;
+    h2{
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 16px;
+    }
+    @include iphon5_h(){
+      width: 90%;
+      h2{
+        font-size: 30px;
+        .line_top{
+          display: block;
+        }
+    }
+    }
+  }
+  @include iphon5_h(){
+    background-image: url(../images/header_mobile.png);}
+}
+
+.top_menu{
+  background-color:rgba(0, 0, 0, 0.75);
+  height: 44px;
+  h1{
+    float: left;
+  }
+  ul{
+    float: right;
+    margin-right: 50px;
+    @include iphon5_h(){
+      margin: 0;
+    }
+      }
+  li{
+    float: left;
+    margin-left: 50px;
+    a{
+      color: #fff;
+      display: block;
+      text-align: center;
+      padding: .5em 0;
+      line-height: 24px;
+      :hover{
+        color: #69CA62;
+      }
+    }
+    }
+
+  @include iphon5_h(){
+    background-color:black;
+    border-bottom: 1px solid #4A4A4A;
+    .menu {
+      /*隱藏選單開始*/
+      max-height: 0;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      transition: max-height 2.3s;
+      position: absolute;
+      z-index: 100;
+      top: 44px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 1);
+    }
+    .menu li{
+      float: none;
+      border-bottom: 1px dashed #4A4A4A;
+      margin: 0;
+    }
+    .menu li a{
+      transition: all 0.3s;
+    }
+    .menu li a:hover{
+      background: #69CA62;
+      color: #fff;
+    }
+    .showmenu{
+      display: block;
+      float: right;
+      color: #fff;
+      font-size: 24px;
+      margin: 10px 20px;
+    }
+  }
+}
+    /*jQ點擊後動態在 body 加上 class */
+    .menu-show .top_menu .menu{
+      max-height: 500px;
+    }
+
+
+.logo{
+  width: 120px;
+  height: 24px;
+  background-image: url("../images/logo_w@svg.svg");
+  margin: 10px;
+  display: block;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 20px;
+}

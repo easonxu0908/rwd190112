@@ -1,0 +1,60 @@
+@mixin pad {
+  @media (max-width:769px){
+      @content
+  }
+}
+
+@mixin iphon6_h {
+  @media (max-width:669px){
+      @content
+  }
+}
+
+
+@mixin iphon5_h {
+  @media (max-width:569px){
+      @content
+  }
+}
+
+
+.footer{
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  float: right;
+  padding:5%;
+  color: #3D1101;
+  h2{
+      font-size: 24px;
+    }
+  };
+  
+  .about,.contact,{
+      float: left;
+      width: 30%;
+      margin-right: 3%;
+      @include iphon6_h(){
+        margin: 2.5%;
+        width: 40%;}
+      @include iphon5_h(){
+        margin: 5% 0;
+        width: 100%;}
+    }
+  
+  .social_media{
+  float: right;
+  width: 30%;
+  h1{
+      float: right;
+  }
+  ul{
+      margin-top: 8%;
+  }
+      li{
+          float: right;
+          margin-left: 5%;
+      }
+      @include iphon6_h(){
+        margin: 3% 0;
+        width: 100%;}
+  }

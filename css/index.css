@@ -1,0 +1,451 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* -----------------------css reset end-------------------------------- */
+body {
+  font-family: 微軟正黑體; }
+
+.wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none; }
+
+.clear_fix {
+  clear: both; }
+
+/* ----------------------------all end------------------------------- */
+/* ----------------------------header start------------------------------- */
+.header {
+  background-image: url(../images/header_desktop.png);
+  height: 420px;
+  color: #fff;
+  position: relative; }
+  .header .showmenu {
+    display: none; }
+  .header .box {
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 67px;
+    background-color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    line-height: 1.5;
+    border-radius: 1px;
+    padding: 20px; }
+    .header .box h2 {
+      font-size: 36px;
+      margin-bottom: 20px; }
+    .header .box p {
+      font-size: 16px; }
+    @media (max-width: 569px) {
+      .header .box {
+        width: 90%; }
+        .header .box h2 {
+          font-size: 30px; }
+          .header .box h2 .line_top {
+            display: block; } }
+  @media (max-width: 569px) {
+    .header {
+      background-image: url(../images/header_mobile.png); } }
+
+.top_menu {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 44px; }
+  .top_menu h1 {
+    float: left; }
+  .top_menu ul {
+    float: right;
+    margin-right: 50px; }
+    @media (max-width: 569px) {
+      .top_menu ul {
+        margin: 0; } }
+  .top_menu li {
+    float: left;
+    margin-left: 50px; }
+    .top_menu li a {
+      color: #fff;
+      display: block;
+      text-align: center;
+      padding: .5em 0;
+      line-height: 24px; }
+      .top_menu li a :hover {
+        color: #69CA62; }
+  @media (max-width: 569px) {
+    .top_menu {
+      background-color: black;
+      border-bottom: 1px solid #4A4A4A; }
+      .top_menu .menu {
+        /*隱藏選單開始*/
+        max-height: 0;
+        overflow: hidden;
+        /*隱藏選單結束*/
+        -webkit-transition: max-height 2.3s;
+        -o-transition: max-height 2.3s;
+        transition: max-height 2.3s;
+        position: absolute;
+        z-index: 100;
+        top: 44px;
+        left: 0;
+        right: 0;
+        background: black; }
+      .top_menu .menu li {
+        float: none;
+        border-bottom: 1px dashed #4A4A4A;
+        margin: 0; }
+      .top_menu .menu li a {
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s; }
+      .top_menu .menu li a:hover {
+        background: #69CA62;
+        color: #fff; }
+      .top_menu .showmenu {
+        display: block;
+        float: right;
+        color: #fff;
+        font-size: 24px;
+        margin: 10px 20px; } }
+
+/*jQ點擊後動態在 body 加上 class */
+.menu-show .top_menu .menu {
+  max-height: 500px; }
+
+.logo {
+  width: 120px;
+  height: 24px;
+  background-image: url("../images/logo_w@svg.svg");
+  margin: 10px;
+  display: block;
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-left: 20px; }
+
+@media (max-width: 669px) {
+  .top_menu {
+    background-color: black;
+    border-bottom: 1px solid #4A4A4A; }
+    .top_menu .menu {
+      /*隱藏選單開始*/
+      max-height: 0;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      -webkit-transition: max-height 2.3s;
+      -o-transition: max-height 2.3s;
+      transition: max-height 2.3s;
+      position: absolute;
+      z-index: 100;
+      top: 44px;
+      left: 0;
+      right: 0;
+      background: black; }
+    .top_menu .menu li {
+      float: none;
+      border-bottom: 1px dashed #4A4A4A;
+      margin: 0; }
+    .top_menu .menu li a {
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+    .top_menu .menu li a:hover {
+      background: #69CA62;
+      color: #fff; }
+    .top_menu .showmenu {
+      display: block;
+      float: right;
+      color: #fff;
+      font-size: 24px;
+      margin: 10px 20px; } }
+
+/* -----------------------header end--------------------- */
+/* -------------------------content start-------------------- */
+.description {
+  text-align: center;
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  padding: 5% 0;
+  color: #3D1101; }
+
+.description h2 {
+  font-size: 24px; }
+  @media (max-width: 569px) {
+    .description h2 {
+      font-size: 20px; } }
+
+.description h3 {
+  font-size: 1.1rem;
+  margin: 1.5% 0; }
+
+.description_head {
+  margin-bottom: 3%; }
+
+.line {
+  border-top: 1px solid #979797; }
+
+.feature {
+  float: left;
+  width: 33%;
+  padding: 0 3%; }
+  @media (max-width: 569px) {
+    .feature {
+      width: 100%;
+      margin: 5% 0;
+      padding: 0 10%; } }
+
+/* ----------------------------description end---------------- */
+.today_chef {
+  background: #3D1101;
+  padding: 0 5%; }
+  @media (max-width: 569px) {
+    .today_chef {
+      padding: 0; } }
+
+.today_chef_col1 {
+  width: 50%;
+  float: left; }
+  @media (max-width: 569px) {
+    .today_chef_col1 {
+      width: 100%; }
+      .today_chef_col1 img {
+        margin: 0 auto;
+        display: block; } }
+
+.today_chef_col1 img {
+  max-width: 100%; }
+
+.today_chef_col2 {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  width: 50%;
+  float: right;
+  padding: 3%;
+  line-height: 1.5;
+  margin-top: 3%; }
+  @media (max-width: 569px) {
+    .today_chef_col2 {
+      width: 100%;
+      padding: 10%; } }
+
+.today_chef_col2 h2 {
+  font-size: 1.3rem; }
+
+/* ---------------today_chef end-------------- */
+.discuss {
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  padding: 5% 0;
+  color: #3D1101; }
+  .discuss h2 {
+    font-size: 24px; }
+
+.discuss_head {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 5%; }
+
+.people {
+  float: left;
+  width: 33%;
+  padding: 0 3%;
+  position: relative; }
+  @media (max-width: 669px) {
+    .people {
+      width: 100%; } }
+
+.peo_col1 {
+  width: 35%;
+  float: left; }
+  .peo_col1 img {
+    display: block;
+    margin: 0 auto; }
+  @media (max-width: 669px) {
+    .peo_col1 img {
+      display: block;
+      margin: 0 auto; } }
+
+.peo_col2 {
+  width: 65%;
+  float: right; }
+  .peo_col2 h3 {
+    margin: 10% 0; }
+  .peo_col2 h4 {
+    text-align: right;
+    color: #3D1101;
+    opacity: 0.75; }
+  @media (max-width: 769px) {
+    .peo_col2 p {
+      padding-left: 5%; }
+    .peo_col2 h3 {
+      padding-left: 5%; } }
+  @media (max-width: 669px) {
+    .peo_col2 {
+      padding-right: 5%; } }
+
+/* ---------------discuss end-------------- */
+.reserve {
+  line-height: 1.5;
+  padding: 5%;
+  color: #3D1101;
+  background-color: #EFE9E7; }
+  .reserve h2 {
+    font-size: 24px; }
+
+.rsv_head {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 3%; }
+
+.rsv_boby {
+  height: 388px; }
+
+.rsv_body_col1 {
+  width: 48%;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .rsv_body_col1 img {
+    max-width: 100%; }
+  @media (max-width: 769px) {
+    .rsv_body_col1 {
+      height: auto; } }
+  @media (max-width: 569px) {
+    .rsv_body_col1 {
+      width: 100%;
+      margin: 5% 0; }
+      .rsv_body_col1 img {
+        display: block;
+        margin: 0 auto; } }
+
+.rsv_body_col2 {
+  width: 48%;
+  height: 388px;
+  float: right; }
+  .rsv_body_col2 h4 {
+    margin: 5px 0; }
+  @media (max-width: 769px) {
+    .rsv_body_col2 {
+      height: auto;
+      font-size: 14px; } }
+  @media (max-width: 569px) {
+    .rsv_body_col2 {
+      width: 100%; } }
+
+.input {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5%;
+  margin: 5px 0;
+  border: 1px solid #DBDBDB; }
+
+.submit {
+  float: right;
+  margin-left: 10px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-top: 75px;
+  background-color: #F56C23;
+  color: #fff;
+  border: 1px solid #DBDBDB; }
+  @media (max-width: 769px) {
+    .submit {
+      margin-top: 0px; } }
+
+.cancel {
+  background-color: #0000005d; }
+
+/* -------------------------reserve end-------------------- */
+/* -------------------------content end-------------------- */
+/* -------------------------footer start-------------------- */
+.footer {
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  float: right;
+  padding: 5%;
+  color: #3D1101; }
+  .footer h2 {
+    font-size: 24px; }
+
+.about, .contact {
+  float: left;
+  width: 30%;
+  margin-right: 3%; }
+  @media (max-width: 669px) {
+    .about, .contact {
+      margin: 2.5%;
+      width: 40%; } }
+  @media (max-width: 569px) {
+    .about, .contact {
+      margin: 5% 0;
+      width: 100%; } }
+
+.social_media {
+  float: right;
+  width: 30%; }
+  .social_media h1 {
+    float: right; }
+  .social_media ul {
+    margin-top: 8%; }
+  .social_media li {
+    float: right;
+    margin-left: 5%; }
+  @media (max-width: 669px) {
+    .social_media {
+      margin: 3% 0;
+      width: 100%; } }
+
+/* -------------------------footer end-------------------- */

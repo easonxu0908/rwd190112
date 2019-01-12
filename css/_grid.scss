@@ -1,0 +1,17 @@
+@mixin pad {
+  @media (max-width:769px){
+      @content
+  }
+}
+
+@mixin iphon6_h {
+  @media (max-width:669px){
+      @content
+  }
+}
+
+@mixin iphon5_h {
+  @media (max-width:569px){
+      @content
+  }
+}

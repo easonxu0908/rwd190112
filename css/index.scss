@@ -1,0 +1,323 @@
+
+@import 'reset';
+
+/* -----------------------css reset end-------------------------------- */
+body{
+  font-family: 微軟正黑體;
+}
+
+.wrap{
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+*{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration-line: none;
+  }
+
+.clear_fix{
+  clear: both;
+}
+
+@mixin pad {
+  @media (max-width:769px){
+      @content
+  }
+}
+
+@mixin iphon6_h {
+  @media (max-width:669px){
+      @content
+  }
+}
+
+@mixin iphon5_h {
+  @media (max-width:569px){
+      @content
+  }
+}
+/* ----------------------------all end------------------------------- */
+/* ----------------------------header start------------------------------- */
+@import 'header';
+
+.top_menu{
+  @include iphon6_h(){
+    background-color:black;
+    border-bottom: 1px solid #4A4A4A;
+    .menu {
+      /*隱藏選單開始*/
+      max-height: 0;
+      overflow: hidden;
+      /*隱藏選單結束*/
+      transition: max-height 2.3s;
+      position: absolute;
+      z-index: 100;
+      top: 44px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 1);
+    }
+    .menu li{
+      float: none;
+      border-bottom: 1px dashed #4A4A4A;
+      margin: 0;
+    }
+    .menu li a{
+      transition: all 0.3s;
+    }
+    .menu li a:hover{
+      background: #69CA62;
+      color: #fff;
+    }
+    .showmenu{
+      display: block;
+      float: right;
+      color: #fff;
+      font-size: 24px;
+      margin: 10px 20px;
+    }
+  }
+}
+
+/* -----------------------header end--------------------- */
+
+/* -------------------------content start-------------------- */
+
+.description{
+  text-align: center;
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  padding: 5% 0;
+  color: #3D1101;
+}
+.description h2{
+  font-size: 24px;
+  @include iphon5_h(){
+    font-size: 20px;
+  }
+}
+
+.description h3{
+  font-size: 1.1rem;
+  margin: 1.5% 0;
+}
+
+.description_head{
+  margin-bottom: 3%;
+}
+
+.line{
+  border-top:1px solid #979797;
+  // @include iphon5_h(){
+  //   border-top:none;}
+  }
+
+.feature{
+  float: left;
+  width: 33%;
+  padding: 0 3%;
+  @include iphon5_h(){
+    width: 100%;
+    margin: 5% 0;
+    padding: 0 10%;
+  }
+}
+
+
+/* ----------------------------description end---------------- */
+
+.today_chef{
+  background: #3D1101;
+  padding: 0 5%;
+  @include iphon5_h(){
+    padding: 0;}
+}
+
+.today_chef_col1{
+  width: 50%;
+  float: left;
+  @include iphon5_h(){
+    width: 100%;
+    img{
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+.today_chef_col1 img{
+  max-width: 100%;
+}
+
+.today_chef_col2{
+  box-sizing: border-box;
+  color: #fff;
+  width: 50%;
+  float: right;
+  padding: 3%;
+  line-height: 1.5;
+  margin-top: 3%;
+  @include iphon5_h(){
+    width: 100%;
+    padding: 10%;
+  }
+}
+
+.today_chef_col2 h2{
+  font-size: 1.3rem;
+}
+
+/* ---------------today_chef end-------------- */
+.discuss{
+  line-height: 1.5;
+  background-color: #4A4A4A;
+  padding: 5% 0;
+  color: #3D1101;
+  h2{
+    font-size: 24px;
+  }
+}
+
+.discuss_head{
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom:5%; 
+}
+
+.people{
+  float: left;
+  width: 33%;
+  padding: 0 3%;
+  position: relative;
+  @include iphon6_h(){
+    width: 100%;
+  }
+}
+.peo_col1{
+  width: 35%;
+  float: left;
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  @include iphon6_h(){
+    img{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+.peo_col2{
+  width: 65%;
+  float: right;
+  h3{
+    margin: 10% 0;
+  }
+  h4{
+    text-align: right;
+    color: #3D1101;
+    opacity: 0.75;
+  }
+  @include pad(){
+    p{
+      padding-left: 5%;
+    }
+    h3{
+      padding-left: 5%;
+    }
+  }
+  @include iphon6_h(){
+    padding-right: 5%;
+  }
+}
+/* ---------------discuss end-------------- */
+.reserve{
+    line-height: 1.5;
+    padding: 5%;
+    color: #3D1101;
+    background-color: #EFE9E7;
+    h2{
+        font-size: 24px;
+      }
+}
+
+.rsv_head{
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 3%;
+}
+.rsv_boby{
+height: 388px;
+}
+.rsv_body_col1{
+  width: 48%;
+  float: left;
+  box-sizing: border-box;
+  img{
+  max-width: 100%;
+  }
+  @include pad(){
+    height: auto;
+    }
+  @include iphon5_h(){
+  width: 100%;
+  margin: 5% 0;
+    img{
+    display: block;
+    margin: 0 auto;
+    }
+  }
+  }
+.rsv_body_col2{
+width: 48%;
+height: 388px;
+float: right;
+h4{
+  margin: 5px 0;
+}
+@include pad(){
+  height: auto;
+  font-size: 14px;}
+@include iphon5_h(){
+  width: 100%;}
+}
+
+.input{
+width:100%;
+padding: 5px;
+border-radius: 5%;
+margin: 5px 0;
+border:1px solid #DBDBDB;
+}
+
+.submit{
+    float: right;
+    margin-left: 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    margin-top: 75px;
+    background-color: #F56C23;
+    color: #fff;
+    border:1px solid #DBDBDB;
+    @include pad(){
+      margin-top:0px;
+    }
+}
+
+.cancel{
+    background-color: #0000005d;
+}
+/* -------------------------reserve end-------------------- */
+
+/* -------------------------content end-------------------- */
+
+/* -------------------------footer start-------------------- */
+
+@import 'footer';
+/* -------------------------footer end-------------------- */
